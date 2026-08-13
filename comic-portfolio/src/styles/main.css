@@ -364,3 +364,30 @@ body{
 .comic-panel:hover {
     transform:rotate(0deg) translate(-5px);
 }
+
+.comic-panel h2{
+    font-family: "Bangers", cursive;
+    font-size: 2.5rem;
+    margin-top: 0;
+
+    color: #D71920;
+    -webkit-text-stroke: 1px #111;
+}
+
+.comic-panel p {
+    line-height: 1.7;
+    font-size: 1rem;   
+}
+
+/*For mobile layout*/
+@media (max-width: 768px) {
+    /**Change from 3 columns to 1 column on small screens*/
+    .origin-panels {
+        grid-template-columns: 1fr;
+    }
+
+    /*Makes the page padding smaller*/
+    .origin-page {
+        padding: 50px 20px;
+    }
+}
