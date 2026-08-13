@@ -1,11 +1,24 @@
 function Hero() {
     return (
-        <section>
+        <section className="hero">
+
+            <div className="hero-content">
+
+            
             <h1>Bien Dominic Managbanag</h1>
-            <h2>Issue #001: About Me</h2>
-            <p></p>
+            <h2 className="issue-number">
+                Issue #001
+            </h2>
+            <p>
+                BRAND NEW <br /> DEVELOPER
+            </p>
+
+            <p className="hero-description">
+                Computer Applications & Software Engineering Graduate
+            </p>
 
             <button>Read My Story</button>
+            </div>
         </section>
     );
 }

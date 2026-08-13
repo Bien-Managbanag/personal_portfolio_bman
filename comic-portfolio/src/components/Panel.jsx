@@ -1,9 +1,9 @@
-function Panel(props) {
+function Panel({ title, text }) {
     return (
-        <div>
-            <h2>{props.title}</h2>
+        <div className="panel">
+            <h2>{title}</h2>
 
-            <p>{props.text}</p>
+            <p>{text}</p>
         </div>
     );
 }

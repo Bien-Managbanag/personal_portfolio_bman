@@ -1,21 +1,22 @@
-import Hero from "./components/Hero";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
+import Home from "./pages/Home";
+import Origins from "./pages/Origins";
 import Navbar from "./components/Navbar";
-import Panel from "./components/Panel";
 
 function App() {
-  return (
-    <div>
-      <Navbar/>
+    return (
+        <BrowserRouter>
 
-      <Hero />
+          <Navbar />
 
-      <Panel
-        title="About Me"
-        text="Recent graduate from DCU with a degree in Computer Applications and Software Engineering"
-      />
+             <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/origin" element={<Origins />} />
+            </Routes>
 
-    </div>
-  );
+        </BrowserRouter>
+    );
 }
 
 export default App;
