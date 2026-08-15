@@ -1,3 +1,6 @@
+/* Import our two fonts from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Roboto+Condensed:wght@300;400;500;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -223,7 +226,7 @@ body{
     width: 80%;
     max-width: 700px;
 
-    margin: 40px auto;
+    margin: 0;
 
     padding: 30px;
 
@@ -316,18 +319,65 @@ body{
     font-weight: bold;
 
     font-size: 1.1rem;
-
+    font-family: "Roboto Condensed";
     letter-spacing: 2px;
 }
 
 /* PANEL LAYOUT */
 .origin-panels{
-    display: grid;
+    max-width: 900px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction:  column;
+    gap: 60px;
+    position: relative;
+    /*display: grid;
     grid-template-columns: repeat(3,1fr);
     gap: 30px;
-    align-items: start;
+    align-items: start; */
 }
 
+/*::before creates an invisible html like element that can be used for decoration
+    Using this to draw a vertical line running through the timeline
+*/
+.origin-panels::before {
+    content: "";
+    width: 6px;
+    /*Makes the line stretch through the entire timeline*/
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    /*Line in the centre*/
+    left: 50%;
+    /*Move it back by half its width so its centred*/
+    transform: translateX(-50%);
+    background: #111;
+    /*Puts line behind the panels*/
+    z-index: 0;
+}
+
+.origin-panels .panel {
+    /* Makes the panels slightly narrower than the timeline*/
+    width: 45%;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.2s ease;
+}
+
+.origin-panels .panel:nth-child(odd){
+    align-self:flex-start;
+    transform: rotate(-1def);
+}
+
+.origin-panels .panel:nth-child(even){
+    align-self: flex-end;
+    transform: rotate(1deg)
+}
+
+.origin-panels .panel:hover{
+    transform: rotate(0deg) translateY(-5px);
+}
+/* */
 .comic-panel {
 
     /* White comic-paper background. */
@@ -376,18 +426,274 @@ body{
 
 .comic-panel p {
     line-height: 1.7;
+    font-family: "Roboto Condensed";
     font-size: 1rem;   
 }
 
+
 /*For mobile layout*/
 @media (max-width: 768px) {
-    /**Change from 3 columns to 1 column on small screens*/
-    .origin-panels {
-        grid-template-columns: 1fr;
+
+    /*
+       Move the timeline line toward
+       the left side of the screen.
+    */
+    .origin-panels::before {
+        left: 15px;
     }
 
-    /*Makes the page padding smaller*/
+    /*
+       Make the panels wider on mobile.
+    */
+    .origin-panels .panel {
+        width: calc(100% - 45px);
+
+        /*
+           Put all panels on the right
+           side of the timeline.
+        */
+        align-self: flex-end;
+    }
+
+    /*
+       Make sure even panels stay
+       on the right.
+    */
+    .origin-panels .panel:nth-child(even) {
+        align-self: flex-end;
+    }
+
+    /*
+       Reduce the page padding.
+    */
     .origin-page {
         padding: 50px 20px;
     }
+
+}
+
+.skills-page {
+    min-height: 100vh;
+    background: #F5F1E8;
+    padding: 80px 8%;
+    color: #111;
+}
+
+.skills-header {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.skills-header p:first-child {
+    display: inline-block;
+    background: #D71920;
+    color: white;
+    font-family: "Bangers", cursive;
+    font-size: 1.5rem;
+    padding: 5px 15px;
+    border: 3px #111 solid;
+    transform: rotate(-2deg);
+}
+
+.skills-header h1 {
+    font-family: "Bangers", cursive;
+    font-size: clamp(4rem, 10vw, 8rem);
+    line-height: 0.8;
+    margin: 20px 0;
+    color: #FFD400;
+    -webkit-text-stroke: 4px #111;
+    text-shadow: 8px 8px 0 #D71920;
+}
+
+.skills-header p:last-child {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+
+.skills-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+}
+
+.skill-card {
+    background: white;
+    border: 5px solid #111;
+    padding: 35px;
+    box-shadow: 10px 10px 0 #111;
+    transition: transform 0.2s ease;
+}
+
+.skill-card h2 {
+    font-family: "Bangers", cursive;
+    font-size: 2rem;
+    color: #D71920;
+    -webkit-text-stroke: 1px #111;
+    margin-top: 0;
+}
+
+.skill-card p {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.skill-card:hover {
+    transform: translate(-5px, -5px);
+}
+
+.tech-stack {
+    max-width: 1000px;
+    margin: 80px auto 0;
+    text-align: center;
+}
+
+.tech-stack h2 {
+    font-family: "Bangers", cursive;
+    font-size: 3rem;
+    color: #FFD400;
+    -webkit-text-stroke: 2px #111;
+    text-shadow: 4px 4px 0 #D71920;
+    margin-bottom: 30px;
+}
+
+.tech-list {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+/* Individual technology */
+
+.tech-list span {
+    background: white;
+    border: 3px solid #111;
+    padding: 10px 18px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    box-shadow: 4px 4px 0 #111;
+    transition: transform 0.15s ease;
+}
+
+.tech-list span:hover {
+    transform: translate(-3px, -3px);
+}
+
+.skill-levels {
+    max-width: 900px;
+    margin: 100px auto 0;
+    padding: 40px;
+    background: white;
+    border: 5px solid #111;
+    box-shadow: 10px 10px 0 #111;
+}
+
+.skill-levels h2 {
+    text-align: center;
+    font-family: "Bangers", cursive;
+    font-size: 3rem;
+    color: #FFD400;
+    -webkit-text-stroke: 2px #111;
+    text-shadow: 4px 4px 0 #D71920;
+    margin-top: 0;
+}
+
+.skill-levels-intro {
+    text-align: center;
+    font-family: "Roboto Condensed", sans-serif;
+    margin-bottom: 40px;
+}
+
+.skill-level {
+    margin-bottom: 30px;
+}
+
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.skill-info h3 {
+    font-family: "Bangers", cursive;
+    font-size: 1.7rem;
+    margin: 0;
+}
+
+.skill-info span {
+    font-family: "Roboto Condensed", sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.skill-bar {
+    width: 100%;
+    height: 25px;
+    background: #F5F1E8;
+    border: 3px solid #111;
+    overflow: hidden;
+}
+
+.skill-progress {
+    height: 100%;
+    background: #D71920;
+}
+
+.skill-progress.beginner {
+    width: 25%;
+}
+
+
+.skill-progress.intermediate {
+   width: 50%;
+}
+
+.skill-progress.advanced {
+    width: 75%;
+}
+
+.skill-progress.expert {
+    width: 100%;
+}
+
+.skill-description {
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 15px 0;
+    color: #333;
+}
+
+.used-for {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+.used-for span {
+    display: inline-block;
+    background: #FFD400;
+    border: 2px solid #111;
+    padding: 5px 10px;
+    font-family: "Roboto Condensed", sans-serif;
+    font-size: 0.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 3px 3px 0 #111;
+}
+
+.used-for span:hover {
+    transform: translate(-2px, -2px);
 }

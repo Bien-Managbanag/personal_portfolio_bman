@@ -1,18 +1,24 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
-import Home from "./pages/Home";
-import Origins from "./pages/Origins";
 import Navbar from "./components/Navbar";
 
+import Home from "./pages/Home";
+import Origins from "./pages/Origins";
+import Skills from "./pages/Skills";
 function App() {
     return (
         <BrowserRouter>
 
-          <Navbar />
+            <Navbar />
 
-             <Routes>
+            <Routes>
+
                 <Route path="/" element={<Home />} />
+
                 <Route path="/origin" element={<Origins />} />
+
+                <Route path="/skills" element={<Skills />} />
+                
             </Routes>
 
         </BrowserRouter>
