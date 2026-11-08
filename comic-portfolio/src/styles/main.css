@@ -93,22 +93,33 @@ body{
     margin-bottom: 40px;
 }
 
-.hero button {
+.hero .story-button {
+    display: inline-block;
     font-family: "Bangers", cursive;
     font-size: 1.6rem;
     letter-spacing: 1px;
     padding: 14px 28px;
+
     background: #D71920;
     color: white;
+
     border: 4px solid #111;
     box-shadow: 7px 7px 0 #111;
+
+    text-decoration: none;
     cursor: pointer;
-    transition: 0.15s;
+
+    transition: transform 0.15s, box-shadow 0.15s;
 }
 
-.hero button:hover {
+.hero .story-button:hover {
     transform: translate(5px, 5px);
     box-shadow: 2px 2px 0 #111;
+}
+
+.hero .story-button:focus-visible {
+    outline: 3px solid #FFD400;
+    outline-offset: 4px;
 }
 
 /*
@@ -696,4 +707,606 @@ body{
 
 .used-for span:hover {
     transform: translate(-2px, -2px);
+}
+
+
+.contact-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 80px;
+  color: #111;
+}
+
+.contact-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+
+.issue-number,
+.issue-label {
+  display: inline-block;
+  font-family: "Bangers", cursive;
+  letter-spacing: 2px;
+  font-size: 1.2rem;
+  color: #D71920;
+}
+
+.contact-header h1 {
+  font-family: "Bangers", cursive;
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  line-height: 1;
+  margin: 12px 0;
+  text-shadow: 3px 3px 0 #FFD400;
+}
+
+.contact-header p {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.15rem;
+}
+
+/* Contact cards */
+
+.contact-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.contact-card {
+  position: relative;
+  display: block;
+  padding: 28px 22px;
+  border: 4px solid #111;
+  box-shadow: 7px 7px 0 #111;
+  color: #111;
+  text-decoration: none;
+  transition: transform 0.2s ease;
+}
+
+.contact-card:nth-child(odd) {
+  transform: rotate(-1deg);
+}
+
+.contact-card:nth-child(even) {
+  transform: rotate(1deg);
+}
+
+.contact-card:hover {
+  transform: translateY(-6px) rotate(0deg);
+}
+
+.email-card {
+  background: #FFD400;
+}
+
+.linkedin-card {
+  background: #1261A0;
+  color: #fff;
+}
+
+.github-card {
+  background: #F5F1E8;
+}
+
+.contact-icon {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.contact-card h2,
+.section-heading h2 {
+  font-family: "Bangers", cursive;
+  letter-spacing: 1px;
+}
+
+.contact-card h2 {
+  font-size: 1.8rem;
+  margin: 0 0 8px;
+}
+
+.contact-card p {
+  font-family: "Roboto Condensed", sans-serif;
+  overflow-wrap: anywhere;
+}
+
+.contact-arrow {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  font-size: 1.5rem;
+}
+
+/* Contact form */
+
+.contact-form-section {
+  max-width: 750px;
+  margin: 0 auto 64px;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.section-heading h2 {
+  font-size: 2.8rem;
+  margin: 8px 0;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px;
+  background: #F5F1E8;
+  border: 4px solid #111;
+  box-shadow: 8px 8px 0 #1261A0;
+}
+
+.contact-form label {
+  font-family: "Bangers", cursive;
+  font-size: 1.2rem;
+  letter-spacing: 1px;
+  margin-top: 8px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 14px;
+  border: 3px solid #111;
+  border-radius: 0;
+  background: #fff;
+  font: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 3px solid #FFD400;
+  outline-offset: 2px;
+}
+
+.contact-form textarea {
+  resize: vertical;
+}
+
+.contact-submit {
+  margin-top: 12px;
+  padding: 15px 20px;
+  border: 3px solid #111;
+  background: #D71920;
+  color: #fff;
+  box-shadow: 4px 4px 0 #111;
+  font-family: "Bangers", cursive;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+
+.contact-submit:hover {
+  background: #1261A0;
+}
+
+/* Location and availability */
+
+.contact-info {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+.info-panel {
+  padding: 26px;
+  background: #fff;
+  border: 4px solid #111;
+  box-shadow: 7px 7px 0 #111;
+}
+
+.location-panel {
+  transform: rotate(-1deg);
+}
+
+.availability-panel {
+  transform: rotate(1deg);
+}
+
+.info-icon {
+  font-size: 2rem;
+}
+
+.info-panel h3 {
+  font-family: "Bangers", cursive;
+  font-size: 1.8rem;
+  margin: 12px 0;
+}
+
+.info-panel p {
+  font-family: "Roboto Condensed", sans-serif;
+  line-height: 1.5;
+}
+
+.availability-label {
+  font-weight: 900;
+  letter-spacing: 1px;
+  color: #D71920;
+}
+
+/* Mobile layout */
+
+@media (max-width: 768px) {
+  .contact-cards {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .contact-card:nth-child(n) {
+    transform: none;
+  }
+
+  .contact-info {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .location-panel,
+  .availability-panel {
+    transform: none;
+  }
+
+  .contact-form {
+    padding: 22px;
+  }
+}
+
+/* PROJECTS PAGE */
+
+.projects-page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+  color: #111;
+}
+
+.projects-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.projects-issue {
+  display: inline-block;
+  padding: 6px 14px;
+  background: #D71920;
+  color: #fff;
+  border: 3px solid #111;
+  box-shadow: 4px 4px 0 #111;
+  font-family: "Bangers", cursive;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  transform: rotate(-2deg);
+}
+
+.projects-header h1 {
+  margin: 20px 0 8px;
+  font-family: "Bangers", cursive;
+  font-size: clamp(3.5rem, 9vw, 6rem);
+  line-height: 1;
+  text-shadow: 4px 4px 0 #FFD400;
+}
+
+.projects-header p {
+  margin-top: 16px;
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.25rem;
+}
+
+/* PROJECT PANELS */
+.project-panels {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.project-panel {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: stretch;
+  min-width: 0;
+
+  background: #F5F1E8;
+  border: 4px solid #111;
+  box-shadow: 9px 9px 0 #111;
+}
+
+.project-panel:nth-child(odd) {
+  transform: rotate(-0.5deg);
+}
+
+.project-panel:nth-child(even) {
+  transform: rotate(0.5deg);
+}
+
+.project-panel:nth-child(even) .project-visual {
+  order: 2;
+}
+
+.project-panel:nth-child(even) .project-content {
+  order: 1;
+}
+
+.project-visual {
+  position: relative;
+  min-height: 330px;
+  padding: 24px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+
+  overflow: hidden;
+  border-right: 4px solid #111;
+
+  /* Comic halftone dot pattern */
+  background-image: radial-gradient(
+    #111 1px,
+    transparent 1.5px
+  );
+  background-size: 9px 9px;
+}
+
+/* Move border when image is on right */
+
+.project-panel:nth-child(even) .project-visual {
+  border-right: none;
+  border-left: 4px solid #111;
+}
+
+/* =========================================
+   PROJECT-SPECIFIC COLOURS
+   ========================================= */
+
+/* Project 01: DCU Expo Application */
+
+.expo-visual {
+  background-color: #1261A0;
+  color: #fff;
+}
+
+/* Project 02: Restaurant POS System */
+
+.pos-visual {
+  background-color: #FFD400;
+  color: #111;
+}
+
+/* IMAGE PLACEHOLDERS */
+.visual-number {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+
+  padding: 4px 12px;
+  background: #fff;
+  color: #111;
+  border: 3px solid #111;
+
+  font-family: "Bangers", cursive;
+  font-size: 1.6rem;
+
+  transform: rotate(-5deg);
+}
+
+.visual-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 80%;
+  min-height: 145px;
+  padding: 12px;
+
+  background: #F5F1E8;
+  color: #111;
+
+  border: 4px solid #111;
+  box-shadow: 7px 7px 0 #111;
+
+  font-family: "Bangers", cursive;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  text-align: center;
+
+  transform: rotate(2deg);
+}
+
+.visual-caption {
+  padding: 7px 12px;
+
+  background: #111;
+  color: #FFD400;
+
+  font-family: "Bangers", cursive;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-align: center;
+
+  transform: rotate(-2deg);
+}
+
+/* PROJECT DESCRIPTION */
+
+.project-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 32px;
+  min-width: 0;
+}
+
+.project-number {
+  display: inline-block;
+  margin-bottom: 14px;
+
+  color: #D71920;
+
+  font-family: "Bangers", cursive;
+  font-size: 1.15rem;
+  letter-spacing: 2px;
+}
+
+.project-content h2 {
+  margin: 0 0 16px;
+
+  font-family: "Bangers", cursive;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  line-height: 1.05;
+}
+
+.project-content p {
+  margin: 0 0 22px;
+
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 1.08rem;
+  line-height: 1.65;
+}
+
+/* TECHNOLOGY TAGS */
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  margin-bottom: 28px;
+}
+
+.project-tags span {
+  padding: 6px 10px;
+
+  background: #FFD400;
+  color: #111;
+
+  border: 2px solid #111;
+
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+/* READ THE STORY BUTTON */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  margin-top: auto;
+  padding: 12px 16px;
+
+  background: #D71920;
+  color: #fff;
+
+  border: 3px solid #111;
+  box-shadow: 4px 4px 0 #111;
+
+  font-family: "Bangers", cursive;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.project-link:hover {
+  background: #1261A0;
+
+  transform: translate(3px, 3px);
+  box-shadow: 1px 1px 0 #111;
+}
+
+.project-link span {
+  font-size: 1.5rem;
+}
+
+/* PROJECTS FOOTER */
+
+.projects-footer {
+  margin-top: 70px;
+  text-align: center;
+}
+
+.projects-footer p {
+  display: inline-block;
+  padding: 10px 18px;
+
+  background: #FFD400;
+  color: #111;
+
+  border: 3px solid #111;
+  box-shadow: 5px 5px 0 #111;
+
+  font-family: "Bangers", cursive;
+  font-size: 1.6rem;
+  letter-spacing: 2px;
+
+  transform: rotate(-2deg);
+}
+
+/* RESPONSIVE DESIGN  */
+
+@media (max-width: 768px) {
+
+  .projects-page {
+    padding: 32px 18px 60px;
+  }
+
+  .projects-header {
+    margin-bottom: 42px;
+  }
+
+  .project-panels {
+    gap: 40px;
+  }
+
+  /* Stack image above description */
+
+  .project-panel {
+    grid-template-columns: 1fr;
+    transform: none !important;
+  }
+
+  .project-panel:nth-child(even) .project-visual,
+  .project-visual {
+    order: 1;
+    min-height: 250px;
+
+    border: none;
+    border-bottom: 4px solid #111;
+  }
+
+  .project-panel:nth-child(even) .project-content,
+  .project-content {
+    order: 2;
+    padding: 26px 22px;
+  }
+
+  .visual-placeholder {
+    min-height: 110px;
+  }
+
+  .project-content h2 {
+    font-size: 2.3rem;
+  }
+
+  .project-link {
+    font-size: 1.2rem;
+  }
 }

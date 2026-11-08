@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 function Hero() {
     return (
         <section className="hero">
@@ -17,7 +19,9 @@ function Hero() {
                 Computer Applications & Software Engineering Graduate
             </p>
 
-            <button>Read My Story</button>
+            <Link to="/origin" className="story-button">
+            READ MY STORY →
+            </Link>
             </div>
         </section>
     );
