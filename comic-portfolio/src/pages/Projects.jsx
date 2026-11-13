@@ -6,7 +6,7 @@ function Projects() {
         <main className="projects-page">
             
             <header className="projects-header">
-                <span className="projects-issue"> ISSUE #005 </span>
+                <span className="projects-issue"> ISSUE #004 </span>
                 <h1> PROJECT FILES </h1>
             </header>
         
@@ -15,13 +15,20 @@ function Projects() {
             <section className="project-panel">
 
                 {/* Project 1 */}
-                <article className="project-panel">
+                <article className="project-panel scraper-panel">
+
                     <div className="project-visual expo-visual">
                         <span className="visual-number">01</span>
-                        <span className="visual-placejolder"> PROJECCT IMAGE </span>
-                        <span className="visual-caption"> DCU PROJECT EXPO APP</span>
-                    </div>
 
+                        <div className="visual-placeholder">
+                            <img
+                            src="/images/final-year-project.png"
+                            alt="DCU Expo Application Screenshot"
+                            className="project-screenshot"
+                            loading="lazy"
+                            />
+                         </div>
+                    </div>
                     <div className="project-content">
                         <span className="project-number">
                             #001
@@ -37,7 +44,10 @@ function Projects() {
                         <div className="project-tags">
                             <span>Ionic</span>
                             <span>Angular</span>
+                            <span>TypeScript</span>
+                            <span>C#</span>
                             <span>SQL</span>
+                            <span>REST APIs</span>
                             <span>Mobile App</span>
                             <span>Website</span>
                         </div>
@@ -45,13 +55,19 @@ function Projects() {
                 </article>
 
                 {/* Project 2 */}
-                <article className="project-panel">
-                    <div className="project-visual RestaurantPOS">
-                        <span className="visual-number"> 02 </span>
-                        <span className="visual-placeholder">
-                            PROJECT IMAGE
-                        </span>
+                <article className="project-panel scraper-panel">
+                       <div className="project-visual pos-visual">
+
+                    <div className="visual-placeholder">
+                        <img
+                            src="/images/restPosV1.png"
+                            alt="Java Restaurant POS System terminal screenshot"
+                            className="project-screenshot"
+                            loading="lazy"
+                        />
                     </div>
+                    </div>
+
                     
                     <div className="project-content">
                         <span className="project-number">
@@ -75,6 +91,45 @@ function Projects() {
                             <span>Command Line Interface</span>
                         </div>
                     </div>
+                </article>
+
+                {/* Project 03 - Python Web Scraper */}
+                <article className="project-panel scraper-panel">
+
+                    <div className="project-visual scraper-visual">
+
+                        <span className="visual-placeholder">
+                            <img
+                                src="/images/web-scraper.png"
+                                alt="Python Web Scraper Project Screenshot"
+                                className="project-screenshot"
+                                loading="lazy"
+                            />
+                        </span>
+                    </div>
+
+                    <div className="project-content">
+                        <span className="project-number">#003</span>
+
+                        <h2>Python Web Scraper</h2>
+
+                        <p>
+                            Developed a Python web scraping application
+                            using Scrapy to extract structured product
+                            information from a demo e-commerce website.
+                            Integrated MongoDB to store the collected
+                            data and implemented three automated tests
+                            to validate the scraper's functionality.
+                        </p>
+
+                        <div className="project-tags">
+                            <span>Python</span>
+                            <span>Scrapy</span>
+                            <span>MongoDB</span>
+                            <span>Unit Testing</span>
+                        </div>
+                    </div>
+
                 </article>
             </section>
 

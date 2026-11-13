@@ -1412,3 +1412,42 @@ SKILLS PAGE
     font-size: 1.2rem;
   }
 }
+
+
+/* WEB SCRAPER - IMAGE ABOVE TEXT */
+
+.project-panel.scraper-panel {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Screenshot always appears first */
+.scraper-panel .scraper-visual {
+    order: 1 !important;
+    width: 100%;
+    border: none !important;
+    border-bottom: 4px solid #111 !important;
+
+    background-color: #D71920;
+    color: #fff;
+}
+
+/* Description always appears second */
+.scraper-panel .project-content {
+    order: 2 !important;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Make screenshot large */
+.scraper-panel .visual-placeholder {
+    width: min(100%, 850px);
+    box-sizing: border-box;
+}
+
+.scraper-panel .project-screenshot {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}

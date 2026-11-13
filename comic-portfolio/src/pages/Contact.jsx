@@ -4,7 +4,7 @@ function Contact() {
     <main className="contact-page">
       {/* Page heading */}
       <header className="contact-header">
-        <span className="issue-number">ISSUE #004</span>
+        <span className="issue-number">ISSUE #005</span>
         <h1>GET IN TOUCH</h1>
         <p>
           Have a project in mind? Let's make something
