@@ -49,7 +49,7 @@ function Origins(){
                 <Panel 
                     title="UNIVERSITY"
                     summary="My journey studyung Computer Applications and Software Engineering in DCU"
-                    image="/images/dcu.jpg"
+                    image={`${import.meta.env.BASE_URL}images/dcu.jpg`}
                     imageAlt="Photo of DCU"
                     text={`My journey at Dublin City University began with a desire to turn my interest in technology into practical skills. 
                     Studying Computer Applications and Software Engineering gave me the opportunity to explore how software is designed, 
@@ -88,7 +88,7 @@ function Origins(){
                 <Panel 
                     title="AUSTRIA"
                     summary="My Erasmus experience studying abroad at Johannes Kepler University in Linz, Austria."
-                    image="/images/jku.jpg"
+                    image={`${import.meta.env.BASE_URL}images/jku.jpg`}
                     imageAlt="Photograph of JKU"
                     text={`During my third year at Dublin City University, I had the opportunity to study abroad at Johannes Kepler University in Linz, Austria, as part of the Erasmus+ programme. It was an exciting opportunity to step outside my comfort zone, experience a different academic environment, and develop both personally and professionally.
 
